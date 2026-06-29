@@ -10,11 +10,6 @@ app.get("/", (req, res) => {
     res.send("DMRC Water Dashboard API");
 });
 
-app.listen(5000, () => {
-    console.log("Server Running On Port 5000");
-});
-
-
 require("dotenv").config();
 const mongoose = require("mongoose");
 
@@ -24,6 +19,15 @@ mongoose.connect(process.env.MONGO_URI)
         console.log("Database:", mongoose.connection.name);
     })
     .catch(err => console.log(err));
+
+
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server Running On Port ${PORT}`);
+});
+
 
 
 
