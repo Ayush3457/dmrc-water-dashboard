@@ -23,15 +23,15 @@ export default function Analytics() {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:5000/api/analytics/line-distribution"
+        `${import.meta.env.VITE_API_URL}/api/analytics/line-distribution`
       )
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
     axios
-      .get("http://localhost:5000/api/analytics/borewell-status")
+      .get(`${import.meta.env.VITE_API_URL}/api/analytics/borewell-status`)
       .then((res) => setStatusData(res.data));
     axios
-      .get("http://localhost:5000/api/analytics/rwh-distribution")
+      .get(`${import.meta.env.VITE_API_URL}/api/analytics/rwh-distribution`)
       .then((res) => setRwhData(res.data))
       .catch((err) => console.log(err));
   },

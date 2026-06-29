@@ -7,7 +7,7 @@ export default function Borewells() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/borewells")
+      .get(`${import.meta.env.VITE_API_URL}/api/borewells`)
       .then((res) => setBorewells(res.data))
       .catch((err) => console.log(err));
   }, []);

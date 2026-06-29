@@ -9,7 +9,7 @@ export default function Stations() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/stations")
+      .get(`${import.meta.env.VITE_API_URL}/api/stations`)
       .then((res) => setStations(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -41,7 +41,7 @@ export default function Stations() {
         Stations
       </h1>
       <a
-        href="http://localhost:5000/api/export/stations"
+        href={`${import.meta.env.VITE_API_URL}/api/export/stations`}
         className=" bg-blue-500
        text-white
        px-4

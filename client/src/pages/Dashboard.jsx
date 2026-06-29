@@ -19,7 +19,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/dashboard")
+      .get(`${import.meta.env.VITE_API_URL}/api/dashboard`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -29,7 +29,7 @@ export default function Dashboard() {
       });
 
     axios
-      .get("http://localhost:5000/api/insights")
+      .get(`${import.meta.env.VITE_API_URL}/api/insights`)
       .then((res) => setInsights(res.data))
       .catch((err) => console.log(err));
   }, []);

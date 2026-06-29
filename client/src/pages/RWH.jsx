@@ -8,7 +8,7 @@ export default function RWH() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:5000/api/rwh")
+            .get(`${import.meta.env.VITE_API_URL}/api/rwh`)
             .then((res) => setRwhs(res.data))
             .catch((err) => console.log(err));
     }, []);
