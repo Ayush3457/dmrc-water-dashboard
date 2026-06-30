@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
 
 import Dashboard from "./pages/Dashboard";
 import Stations from "./pages/Stations";
@@ -11,8 +11,8 @@ import RWH from "./pages/RWH";
 function App() {
   return (
     <BrowserRouter>
-      <div className="flex">
-        <Sidebar />
+      <div className="min-h-screen bg-gray-100">
+        <Navbar />
 
         <div className="flex-1 p-8 bg-gray-100 min-h-screen">
           <Routes>
